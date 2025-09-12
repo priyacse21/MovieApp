@@ -9,6 +9,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import { useReactQueryDevTools } from '@dev-plugins/react-query';
 import { useColorScheme } from '@/components/useColorScheme';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 
@@ -28,6 +29,7 @@ export const unstable_settings = {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+   useReactQueryDevTools(client);
   const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FontAwesome.font,
