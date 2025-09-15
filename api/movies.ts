@@ -23,23 +23,24 @@ return json.results
 
 export const fetchMovie= async (id: number) =>
 {
-  const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
+  if (!id) {
+  throw new Error("Movie ID is required and must be a number");
+}
+
+  const url = `https://api.themoviedb.org/3/movie/movie_id?language=en-US`;
+  console.log(url,"123");
 const options = {
   method: 'GET',
-  headers:headers
+  headers:headers,
 };
 
-const res=await fetch(url, options);
+const res = await fetch(url, options);
 if(!res.ok)
 {
   throw new Error('Failed to fetch movies');
 }
-const json=await res.json();
+const json = await res.json();
 return json;
 
-// fetch(url, options)
-//   .then(res => res.json())
-//   .then(json => console.log(json))
-//   .catch(err => console.error(err));
 
 };

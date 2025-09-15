@@ -12,7 +12,7 @@ export default function TabOneScreen() {
   });
 
 
-  //***********The Below State variable,useEfffect function is replaced by  above thre lines of useQuery function.**********
+  //***********The Below State variable,useEfffect function is replaced by  above three lines of useQuery function.**********
   // const [movies,setMovies] = useState([]);
   // const [isLoading, setIsLoading]=useState(false);
   // const [error,setError]=useState(null);
@@ -52,7 +52,7 @@ export default function TabOneScreen() {
        columnWrapperStyle={{gap : 5}}
       numColumns={2}
       renderItem={({item})=> <MovieListItem movie = {item} />
-        // (<View><Text>{item.title}</Text></View>)
+      
       }
       />
     </View>
@@ -62,8 +62,7 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center',
+ 
   },
 
 });
