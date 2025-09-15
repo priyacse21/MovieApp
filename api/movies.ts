@@ -27,7 +27,7 @@ export const fetchMovie= async (id: number) =>
   throw new Error("Movie ID is required and must be a number");
 }
 
-  const url = `https://api.themoviedb.org/3/movie/movie_id?language=en-US`;
+  const url = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
   console.log(url,"123");
 const options = {
   method: 'GET',

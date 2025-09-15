@@ -55,6 +55,7 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  useReactQueryDevTools(client)
 
   return (
     <QueryClientProvider client={client}>
